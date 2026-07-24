@@ -1,0 +1,772 @@
+{
+  "name": "ERP Procurement - Purchase Order Approval Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "model": "llama-3.1-8b-instant",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        752,
+        192
+      ],
+      "id": "ca36433e-6882-469a-879d-def9e4895bbf",
+      "name": "Groq Chat Model"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.pdfshift.io/v3/convert/pdf",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "YOUR_PDFSHIFT_API_KEY"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{\n  {\n    source: $json.html.trim(),\n    sandbox: true,\n    format: \"A4\"\n  }\n}}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1488,
+        -32
+      ],
+      "id": "874cc611-1539-4b4e-8bba-aca763754fe2",
+      "name": "PDFShift Convert PDF"
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.first();\n\nif (!item.binary?.data) {\n  throw new Error('PDF binary data not found');\n}\n\nitem.binary.data.fileName = 'erp_procurement_risk_report.pdf';\nitem.binary.data.mimeType = 'application/pdf';\n\nreturn [item];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1696,
+        -32
+      ],
+      "id": "e7e4b236-b1a2-4c82-a477-35946ea3b2b8",
+      "name": "Prepare PDF Attachment"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        1104,
+        688
+      ],
+      "id": "d2311508-fdbd-4984-b52a-f067469b0100",
+      "name": "Groq Chat Model1"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id",
+          "cachedResultName": "ERP Procurement Dashboard"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 652072094,
+          "mode": "list",
+          "cachedResultName": "Purchase_Order_Approval_Log"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {
+            "approval_id": "={{$json.approval_id}}",
+            "report_date": "={{$json.report_date}}",
+            "risk_level": "={{$json.risk_level}}",
+            "decision_status": "={{$json.decision_status}}",
+            "requested_at": "={{$json.requested_at}}",
+            "decided_at": "={{$json.decided_at}}",
+            "decision_by": "={{$json.decision_by}}",
+            "action_result": "={{$json.action_result}}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "approval_id",
+              "displayName": "approval_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "report_date",
+              "displayName": "report_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "risk_level",
+              "displayName": "risk_level",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "total_amount_mad",
+              "displayName": "total_amount_mad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "approval_required_count",
+              "displayName": "approval_required_count",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "decision_status",
+              "displayName": "decision_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "requested_at",
+              "displayName": "requested_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "decided_at",
+              "displayName": "decided_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "decision_by",
+              "displayName": "decision_by",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "action_result",
+              "displayName": "action_result",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1600,
+        448
+      ],
+      "id": "b846a7da-4937-40d0-82b0-c320c0d71192",
+      "name": "Google Sheets - Save Pending Approval"
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "=🚨 PURCHASE ORDER APPROVAL REQUIRED\n\nApproval ID: {{ $('Prepare Purchase Order Approval').first().json.approval_id }}\nRisk level: {{ $('Prepare Purchase Order Approval').first().json.risk_level }}\nTotal amount: {{ $('Prepare Purchase Order Approval').first().json.total_amount_mad }} MAD\nOrders requiring approval: {{ $('Prepare Purchase Order Approval').first().json.approval_required_count }}\nHighest order: {{ $('Prepare Purchase Order Approval').first().json.highest_order_id }}\nSupplier: {{ $('Prepare Purchase Order Approval').first().json.highest_order_supplier }}\n\n✅ APPROVE:\n{{ $('Prepare Purchase Order Approval').first().json.approve_url }}\n\n❌ REJECT:\n{{ $('Prepare Purchase Order Approval').first().json.reject_url }}",
+        "additionalFields": {
+          "parse_mode": "HTML"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1824,
+        448
+      ],
+      "id": "d060a221-f308-4f35-896b-963110a50938",
+      "name": "Telegram - Approval Request",
+      "webhookId": "c88825d8-b81f-4acb-9246-84cbea69fc78"
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {
+          "q": "subject:\"ERP Purchase Orders\" has:attachment filename:csv"
+        },
+        "options": {
+          "downloadAttachments": true
+        }
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        160
+      ],
+      "id": "d5560a0b-c7fc-4cbf-8d71-a8ee2ac3976b",
+      "name": "Gmail Trigger - Purchase Orders CSV"
+    },
+    {
+      "parameters": {
+        "binaryPropertyName": "attachment_0",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        176,
+        160
+      ],
+      "id": "473d00eb-2415-4c9d-8eb7-e603cbe4949b",
+      "name": "Extract Purchase Orders CSV"
+    },
+    {
+      "parameters": {
+        "jsCode": "const orders = $input.all().map(item => item.json);\n\nconst normalize = (value) =>\n  String(value ?? '').trim().toLowerCase();\n\nconst toNumber = (value) =>\n  Number(String(value ?? 0).replace(/\\s/g, '').replace(',', '.')) || 0;\n\nconst getValue = (order, fields) => {\n  for (const field of fields) {\n    if (order[field] !== undefined && order[field] !== '') {\n      return order[field];\n    }\n  }\n  return '';\n};\n\n// Date actuelle au Maroc au format AAAA-MM-JJ\nconst dateParts = new Intl.DateTimeFormat('en-CA', {\n  timeZone: 'Africa/Casablanca',\n  year: 'numeric',\n  month: '2-digit',\n  day: '2-digit'\n}).formatToParts(new Date());\n\nconst year = dateParts.find(part => part.type === 'year').value;\nconst month = dateParts.find(part => part.type === 'month').value;\nconst day = dateParts.find(part => part.type === 'day').value;\n\nconst reportDate = `${year}-${month}-${day}`;\n\nconst preparedOrders = orders.map(order => ({\n  po_id: getValue(order, ['po_id', 'purchase_order_id', 'order_id']),\n  supplier_name: getValue(order, ['supplier_name', 'supplier']),\n  amount_mad: toNumber(\n    getValue(order, ['amount_mad', 'total_amount', 'amount'])\n  ),\n  supplier_risk: normalize(\n    getValue(order, ['supplier_risk', 'risk_supplier'])\n  ),\n  urgency: normalize(\n    getValue(order, ['urgency', 'priority'])\n  ),\n}));\n\n// Détection des doublons\nconst idCounts = {};\n\nfor (const order of preparedOrders) {\n  if (order.po_id) {\n    idCounts[order.po_id] = (idCounts[order.po_id] || 0) + 1;\n  }\n}\n\nconst highValueOrders = preparedOrders.filter(\n  order => order.amount_mad >= 100000\n);\n\nconst riskySupplierOrders = preparedOrders.filter(\n  order => ['high', 'blocked', 'élevé', 'eleve'].includes(order.supplier_risk)\n);\n\nconst urgentOrders = preparedOrders.filter(\n  order => ['urgent', 'high', 'critical', 'critique'].includes(order.urgency)\n);\n\nconst duplicateOrders = preparedOrders.filter(\n  order => order.po_id && idCounts[order.po_id] > 1\n);\n\nconst ordersRequiringApproval = preparedOrders.filter(order => {\n  const isDuplicate = order.po_id && idCounts[order.po_id] > 1;\n  const isHighValue = order.amount_mad >= 100000;\n\n  const isRiskySupplier = [\n    'high',\n    'blocked',\n    'élevé',\n    'eleve'\n  ].includes(order.supplier_risk);\n\n  const isSensitiveUrgentOrder =\n    ['urgent', 'critical', 'critique'].includes(order.urgency) &&\n    order.amount_mad >= 50000;\n\n  return (\n    isDuplicate ||\n    isHighValue ||\n    isRiskySupplier ||\n    isSensitiveUrgentOrder\n  );\n});\n\nconst totalAmount = preparedOrders.reduce(\n  (sum, order) => sum + order.amount_mad,\n  0\n);\n\nconst highestOrder = [...preparedOrders].sort(\n  (a, b) => b.amount_mad - a.amount_mad\n)[0] || {};\n\nlet riskLevel = 'Low';\n\nif (\n  riskySupplierOrders.length > 0 ||\n  duplicateOrders.length > 0 ||\n  highValueOrders.length > 0\n) {\n  riskLevel = 'High';\n} else if (\n  urgentOrders.length > 0 ||\n  totalAmount >= 200000\n) {\n  riskLevel = 'Medium';\n}\n\nreturn [{\n  json: {\n    report_date: reportDate,\n    total_purchase_orders: preparedOrders.length,\n    total_amount_mad: totalAmount,\n    high_value_orders: highValueOrders.length,\n    risky_supplier_orders: riskySupplierOrders.length,\n    urgent_orders: urgentOrders.length,\n    duplicate_orders: duplicateOrders.length,\n    approval_required_count: ordersRequiringApproval.length,\n    highest_order_id: highestOrder.po_id || 'N/A',\n    highest_order_supplier: highestOrder.supplier_name || 'N/A',\n    highest_order_amount_mad: highestOrder.amount_mad || 0,\n    risk_level: riskLevel,\n    approval_required: ordersRequiringApproval.length > 0\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        368,
+        160
+      ],
+      "id": "3daee3aa-92d3-460b-92d3-bcb9eecc35ca",
+      "name": "Calculate Purchase Order Risk"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "9eb1581f-73eb-4be8-9bf0-4ffe2193791d",
+              "leftValue": "={{ $json.approval_required }}",
+              "rightValue": "High",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "looseTypeValidation": "={{ false }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        736,
+        464
+      ],
+      "id": "73844af3-e79a-4fd0-a3a6-6fbce0c2d248",
+      "name": "IF Purchase Order Approval Required"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an ERP procurement analyst.\n\nAnalyze this purchase order report:\n\n- Total purchase orders: {{ $json.total_purchase_orders }}\n- Total amount: {{ $json.total_amount_mad }} MAD\n- High-value orders: {{ $json.high_value_orders }}\n- Risky supplier orders: {{ $json.risky_supplier_orders }}\n- Urgent orders: {{ $json.urgent_orders }}\n- Duplicate orders: {{ $json.duplicate_orders }}\n- Orders requiring approval: {{ $json.approval_required_count }}\n- Highest order: {{ $json.highest_order_id }}\n- Supplier: {{ $json.highest_order_supplier }}\n- Highest amount: {{ $json.highest_order_amount_mad }} MAD\n- Global risk: {{ $json.risk_level }}\n\nWrite a short professional procurement summary in English with:\n1. Risk assessment\n2. Main anomalies\n3. Recommended action\nMaximum 120 words.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        688,
+        -32
+      ],
+      "id": "d3cdb238-a55a-4c81-9c7a-820f4d004ff0",
+      "name": "AI Procurement Risk Summary1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Create a short urgent ERP procurement approval alert.\n\nRisk level: {{ $json.risk_level }}\nTotal purchase orders: {{ $json.total_purchase_orders }}\nTotal amount: {{ $json.total_amount_mad }} MAD\nHigh-value orders: {{ $json.high_value_orders }}\nRisky supplier orders: {{ $json.risky_supplier_orders }}\nUrgent orders: {{ $json.urgent_orders }}\nDuplicate orders: {{ $json.duplicate_orders }}\nOrders requiring approval: {{ $json.approval_required_count }}\nHighest order: {{ $json.highest_order_id }}\nSupplier: {{ $json.highest_order_supplier }}\nHighest amount: {{ $json.highest_order_amount_mad }} MAD\n\nClearly state that human approval is required before processing.\nMaximum 100 words.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1024,
+        448
+      ],
+      "id": "e23fd397-b299-4fc7-9028-562338cfe8fe",
+      "name": "AI Purchase Order Approval Alert"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id",
+          "cachedResultName": "ERP Procurement Dashboard"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Purchase_Order_KPI_Log"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {
+            "report_date": "={{$json.report_date}}",
+            "risk_level": "={{$json.risk_level}}\n"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "report_date",
+              "displayName": "report_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "total_purchase_orders",
+              "displayName": "total_purchase_orders",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "total_amount_mad",
+              "displayName": "total_amount_mad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "high_value_orders",
+              "displayName": "high_value_orders",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "risky_supplier_orders",
+              "displayName": "risky_supplier_orders",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "urgent_orders",
+              "displayName": "urgent_orders",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "duplicate_orders",
+              "displayName": "duplicate_orders",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "approval_required_count",
+              "displayName": "approval_required_count",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "highest_order_id",
+              "displayName": "highest_order_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "highest_order_supplier",
+              "displayName": "highest_order_supplier",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "highest_order_amount_mad",
+              "displayName": "highest_order_amount_mad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "risk_level",
+              "displayName": "risk_level",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        736,
+        -224
+      ],
+      "id": "c7b5b337-1ba8-4c33-b9b6-3ddc541efe25",
+      "name": "Google Sheets - Save Procurement KPIs"
+    },
+    {
+      "parameters": {
+        "jsCode": "const kpi = $('Calculate Purchase Order Risk').first().json;\nconst aiAlert = $json.output || '';\n\nconst now = new Date();\nconst approvalId =\n  'PO-APP-' +\n  now.toISOString().replace(/\\D/g, '').slice(0, 14);\n\nconst baseUrl =\n  'https://YOUR-N8N-DOMAIN/webhook/purchase-order-approval-decision';\n\nreturn [{\n  json: {\n    ...kpi,\n    approval_id: approvalId,\n    decision_status: 'Pending',\n    requested_at: now.toISOString(),\n    decided_at: '',\n    decision_by: '',\n    action_result: 'Awaiting human approval',\n    ai_alert: aiAlert,\n\n    approve_url:\n      `${baseUrl}?approval_id=${approvalId}&decision=approved&decision_by=Procurement%20Manager`,\n\n    reject_url:\n      `${baseUrl}?approval_id=${approvalId}&decision=rejected&decision_by=Procurement%20Manager`\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1376,
+        448
+      ],
+      "id": "542822de-cb20-4846-9f77-5e95bd1f5ea5",
+      "name": "Prepare Purchase Order Approval"
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "={{$json.output}}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1088,
+        176
+      ],
+      "id": "b8160dfd-9e8d-44d9-a3c7-4e2c7eacb34a",
+      "name": "Telegram - Procurement Summary",
+      "webhookId": "ce781297-f781-4b00-8203-62a7447f7e32"
+    },
+    {
+      "parameters": {
+        "jsCode": "const kpi = $('Calculate Purchase Order Risk').first().json;\nconst summary = $json.output || 'No AI summary available.';\n\nconst escapeHtml = (value) =>\n  String(value)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\"/g, '&quot;')\n    .replace(/'/g, '&#039;');\n\nconst formattedSummary = escapeHtml(summary)\n  .replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')\n  .replace(/\\n/g, '<br>');\n\nconst formatNumber = (value) =>\n  Number(value || 0).toLocaleString('en-US');\n\nconst html = `\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <style>\n    body {\n      font-family: Arial, sans-serif;\n      color: #1f2937;\n      padding: 30px;\n    }\n    h1 { color: #163a5f; }\n    h2 { color: #2563eb; }\n    table {\n      width: 100%;\n      border-collapse: collapse;\n      margin: 20px 0;\n    }\n    th, td {\n      border: 1px solid #d1d5db;\n      padding: 10px;\n      text-align: left;\n    }\n    th {\n      background: #163a5f;\n      color: white;\n    }\n    .risk {\n      font-size: 20px;\n      font-weight: bold;\n      color: ${kpi.risk_level === 'High' ? '#dc2626' : '#d97706'};\n    }\n  </style>\n</head>\n<body>\n\n<h1>ERP Procurement Risk Report</h1>\n\n<p><strong>Report date:</strong> ${kpi.report_date}</p>\n<p class=\"risk\">Global risk level: ${kpi.risk_level}</p>\n\n<table>\n  <tr><th>KPI</th><th>Result</th></tr>\n  <tr><td>Total purchase orders</td><td>${kpi.total_purchase_orders}</td></tr>\n  <tr><td>Total amount</td><td>${formatNumber(kpi.total_amount_mad)} MAD</td></tr>\n  <tr><td>High-value orders</td><td>${kpi.high_value_orders}</td></tr>\n  <tr><td>Risky supplier orders</td><td>${kpi.risky_supplier_orders}</td></tr>\n  <tr><td>Urgent orders</td><td>${kpi.urgent_orders}</td></tr>\n  <tr><td>Duplicate orders</td><td>${kpi.duplicate_orders}</td></tr>\n  <tr><td>Orders requiring approval</td><td>${kpi.approval_required_count}</td></tr>\n  <tr><td>Highest purchase order</td><td>${kpi.highest_order_id}</td></tr>\n  <tr><td>Supplier</td><td>${kpi.highest_order_supplier}</td></tr>\n  <tr><td>Highest amount</td><td>${formatNumber(kpi.highest_order_amount_mad)} MAD</td></tr>\n</table>\n\n<h2>AI Procurement Analysis</h2>\n<p>${formattedSummary}</p>\n\n<h2>Recommended action</h2>\n<p>Review sensitive purchase orders before supplier confirmation and ERP processing.</p>\n\n</body>\n</html>\n`;\n\nreturn [{\n  json: {\n    ...kpi,\n    ai_summary: summary,\n    html\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1040,
+        -32
+      ],
+      "id": "c77a4759-0be8-46bb-bc9a-6a8b75ee9949",
+      "name": "Create Procurement HTML Report"
+    },
+    {
+      "parameters": {
+        "sendTo": "YOUR_EMAIL@example.com",
+        "subject": "=ERP Procurement Risk Report - {{ $json.risk_level }}",
+        "message": "=Hello,\n\nPlease find attached the ERP Procurement Risk Report.\n\nRisk level: {{ $json.risk_level }}\nTotal purchase orders: {{ $json.total_purchase_orders }}\nTotal amount: {{ $json.total_amount_mad }} MAD\nOrders requiring approval: {{ $json.approval_required_count }}\n\nSensitive purchase orders must be reviewed before processing.\n\nView the interactive procurement dashboard:\nhttps://datastudio.google.com/reporting/04a11ef9-b9a4-4c33-b2f9-e8e3e4d7866c/page/1Lf4F\n\nBest regards,\nERP Procurement Approval Agent",
+        "options": {
+          "attachmentsUi": {
+            "attachmentsBinary": [
+              {}
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1936,
+        -32
+      ],
+      "id": "24e35736-ed05-420b-be3a-9d85e12cfe89",
+      "name": "Gmail - Send Procurement PDF Report",
+      "webhookId": "e68fcb86-df7a-400f-a49b-dd2e60ae056e"
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.first();\n\nif (!item.json.html) {\n  throw new Error('HTML report not found');\n}\n\nreturn [item];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1264,
+        -32
+      ],
+      "id": "5d9e5683-d0e2-498e-a5f9-2d46b21841e6",
+      "name": "Prepare HTML for PDFShift"
+    }
+  ],
+  "connections": {
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Procurement Risk Summary1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PDFShift Convert PDF": {
+      "main": [
+        [
+          {
+            "node": "Prepare PDF Attachment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Purchase Order Approval Alert",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Save Pending Approval": {
+      "main": [
+        [
+          {
+            "node": "Telegram - Approval Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Trigger - Purchase Orders CSV": {
+      "main": [
+        [
+          {
+            "node": "Extract Purchase Orders CSV",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Purchase Orders CSV": {
+      "main": [
+        [
+          {
+            "node": "Calculate Purchase Order Risk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare PDF Attachment": {
+      "main": [
+        [
+          {
+            "node": "Gmail - Send Procurement PDF Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Purchase Order Risk": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Save Procurement KPIs",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Procurement Risk Summary1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "IF Purchase Order Approval Required",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Purchase Order Approval Required": {
+      "main": [
+        [
+          {
+            "node": "AI Purchase Order Approval Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Procurement Risk Summary1": {
+      "main": [
+        [
+          {
+            "node": "Telegram - Procurement Summary",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Procurement HTML Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Purchase Order Approval Alert": {
+      "main": [
+        [
+          {
+            "node": "Prepare Purchase Order Approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Save Procurement KPIs": {
+      "main": [
+        []
+      ]
+    },
+    "Prepare Purchase Order Approval": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Save Pending Approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Procurement HTML Report": {
+      "main": [
+        [
+          {
+            "node": "Prepare HTML for PDFShift",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail - Send Procurement PDF Report": {
+      "main": [
+        []
+      ]
+    },
+    "Prepare HTML for PDFShift": {
+      "main": [
+        [
+          {
+            "node": "PDFShift Convert PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  }
+}

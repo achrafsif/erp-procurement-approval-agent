@@ -1,0 +1,386 @@
+{
+  "name": "ERP Procurement - Purchase Order Approval Decision Handler",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "purchase-order-approval-decision",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        -80
+      ],
+      "id": "e1c6b6c8-4e00-4f7a-a5a2-8fdf7dbb70ea",
+      "name": "Webhook Approval Decision",
+      "webhookId": "2bffba96-abd6-43d1-a632-b711b8200923"
+    },
+    {
+      "parameters": {
+        "jsCode": "const query = $json.query || $json;\n\nconst approvalId = query.approval_id;\nconst decision = String(query.decision || '').toLowerCase();\nconst decisionBy = query.decision_by || 'Procurement Manager';\n\nif (!approvalId) {\n  throw new Error('Missing approval_id');\n}\n\nif (!['approved', 'rejected'].includes(decision)) {\n  throw new Error('Decision must be approved or rejected');\n}\n\nreturn [{\n  json: {\n    approval_id: approvalId,\n    decision,\n    decision_status:\n      decision === 'approved' ? 'Approved' : 'Rejected',\n    decision_by: decisionBy,\n    decided_at: new Date().toISOString(),\n    action_result:\n      decision === 'approved'\n        ? 'Purchase order escalation approved'\n        : 'Purchase order request rejected'\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        -80
+      ],
+      "id": "abbd8f67-48fc-451f-9c35-b082406b2270",
+      "name": "Prepare Decision Data"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "4a482b75-63f5-4ed7-b41f-81991db188da",
+              "leftValue": "={{ $json.decision }}",
+              "rightValue": "approved",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        448,
+        -80
+      ],
+      "id": "85ac5a10-70f2-434b-9b53-6e133855496d",
+      "name": "IF Decision Approved"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id",
+          "cachedResultName": "ERP Procurement Dashboard"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 652072094,
+          "mode": "list",
+          "cachedResultName": "Purchase_Order_Approval_Log"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "approval_id": "={{ $json.approval_id }}",
+            "decision_status": "={{ $json.decision_status }}",
+            "decided_at": "={{ $json.decided_at }}",
+            "decision_by": "={{ $json.decision_by }}",
+            "action_result": "={{ $json.action_result }}",
+            "notes": "={{ $json.notes }}"
+          },
+          "matchingColumns": [
+            "approval_id"
+          ],
+          "schema": [
+            {
+              "id": "approval_id",
+              "displayName": "approval_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "decision_status",
+              "displayName": "decision_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "decided_at",
+              "displayName": "decided_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "decision_by",
+              "displayName": "decision_by",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "action_result",
+              "displayName": "action_result",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "notes",
+              "displayName": "notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        672,
+        -176
+      ],
+      "id": "2f118014-f82f-47fb-b161-c0a3117ab97e",
+      "name": "Google Sheets - Update Approved"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id",
+          "cachedResultName": "ERP Procurement Dashboard"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 652072094,
+          "mode": "list",
+          "cachedResultName": "Purchase_Order_Approval_Log"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "approval_id": "={{ $json.approval_id }}",
+            "decision_status": "={{ $json.decision_status }}",
+            "decided_at": "={{ $json.decided_at }}",
+            "decision_by": "={{ $json.decision_by }}",
+            "action_result": "={{ $json.action_result }}",
+            "notes": "={{ $json.notes }}"
+          },
+          "matchingColumns": [
+            "approval_id"
+          ],
+          "schema": [
+            {
+              "id": "approval_id",
+              "displayName": "approval_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "decision_status",
+              "displayName": "decision_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "decided_at",
+              "displayName": "decided_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "decision_by",
+              "displayName": "decision_by",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "action_result",
+              "displayName": "action_result",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "notes",
+              "displayName": "notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        672,
+        16
+      ],
+      "id": "9b73985e-f92a-40a4-bc41-cae9f824fd85",
+      "name": "Google Sheets - Update Rejected"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id",
+          "cachedResultName": "ERP Procurement Dashboard"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 652072094,
+          "mode": "list",
+          "cachedResultName": "Purchase_Order_Approval_Log"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "approval_id",
+              "lookupValue": "={{$json.approval_id}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        896,
+        -176
+      ],
+      "id": "3521abd7-1f1a-401b-bf17-61cbf1efcfad",
+      "name": "Google Sheets - Get Approval Details"
+    },
+    {
+      "parameters": {
+        "sendTo": "YOUR_EMAIL@example.com",
+        "subject": "=URGENT - Purchase order approved - {{ $json.approval_id }}",
+        "emailType": "text",
+        "message": "=Hello,\n\nThe purchase order request has been approved.\n\nApproval ID: {{ $json.approval_id }}\nDecision: {{ $json.decision_status }}\nDecision by: {{ $json.decision_by }}\nDecision date: {{ $json.decided_at }}\nResult: {{ $json.action_result }}\n\nThe procurement team can now continue the validation and supplier processing.\n\nBest regards,\nERP Procurement Approval Agent",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        -176
+      ],
+      "id": "ad5f3372-5439-47c6-bcf7-8d766262aea5",
+      "name": "Gmail - Send Approved PO Decision",
+      "webhookId": "fb993272-d0e7-4958-98ee-f1da5e7b353f"
+    }
+  ],
+  "connections": {
+    "Webhook Approval Decision": {
+      "main": [
+        [
+          {
+            "node": "Prepare Decision Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Decision Data": {
+      "main": [
+        [
+          {
+            "node": "IF Decision Approved",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Decision Approved": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Update Approved",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google Sheets - Update Rejected",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Update Approved": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Get Approval Details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Get Approval Details": {
+      "main": [
+        [
+          {
+            "node": "Gmail - Send Approved PO Decision",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  }
+}

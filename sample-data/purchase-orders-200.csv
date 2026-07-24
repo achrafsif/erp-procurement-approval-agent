@@ -1,0 +1,201 @@
+index,po_id,supplier_name,amount_mad,supplier_risk,urgency
+0,PO-2026-2001,Casa Equipment,82821,medium,urgent
+1,PO-2026-2002,Rabat Supplies,100142,low,normal
+2,PO-2026-2003,Tanger Logistics Parts,117463,low,normal
+3,PO-2026-2004,Kenitra Maintenance,134784,medium,normal
+4,PO-2026-2005,Marrakech Office Solutions,152105,low,urgent
+5,PO-2026-2006,Agadir Packaging,169426,low,urgent
+6,PO-2026-2007,Fes Technical Services,186747,medium,normal
+7,PO-2026-2008,Atlas Industrial,19068,high,normal
+8,PO-2026-2009,Casa Equipment,36389,low,normal
+9,PO-2026-2010,Rabat Supplies,53710,medium,urgent
+10,PO-2026-2011,Tanger Logistics Parts,71031,low,urgent
+11,PO-2026-2012,Kenitra Maintenance,88352,low,normal
+12,PO-2026-2013,Marrakech Office Solutions,105673,medium,normal
+13,PO-2026-2014,Agadir Packaging,122994,low,normal
+14,PO-2026-2015,Fes Technical Services,140315,low,urgent
+15,PO-2026-2016,Atlas Industrial,157636,high,urgent
+16,PO-2026-2017,Casa Equipment,174957,low,normal
+17,PO-2026-2018,Rabat Supplies,192278,low,normal
+18,PO-2026-2019,Tanger Logistics Parts,24599,medium,normal
+19,PO-2026-2020,Kenitra Maintenance,41920,low,urgent
+20,PO-2026-2021,Marrakech Office Solutions,59241,low,urgent
+21,PO-2026-2022,Agadir Packaging,76562,medium,normal
+22,PO-2026-2023,Fes Technical Services,93883,low,normal
+23,PO-2026-2024,Atlas Industrial,111204,high,normal
+24,PO-2026-2025,Casa Equipment,128525,medium,urgent
+25,PO-2026-2026,Rabat Supplies,145846,low,urgent
+26,PO-2026-2027,Tanger Logistics Parts,163167,low,normal
+27,PO-2026-2028,Kenitra Maintenance,180488,medium,normal
+28,PO-2026-2029,Marrakech Office Solutions,197809,low,normal
+29,PO-2026-2030,Agadir Packaging,30130,low,urgent
+30,PO-2026-2031,Fes Technical Services,47451,medium,urgent
+31,PO-2026-2032,Atlas Industrial,64772,high,normal
+32,PO-2026-2033,Casa Equipment,82093,low,normal
+33,PO-2026-2034,Rabat Supplies,99414,medium,normal
+34,PO-2026-2035,Tanger Logistics Parts,116735,low,urgent
+35,PO-2026-2036,Kenitra Maintenance,134056,low,urgent
+36,PO-2026-2037,Marrakech Office Solutions,151377,medium,normal
+37,PO-2026-2038,Agadir Packaging,168698,low,normal
+38,PO-2026-2039,Fes Technical Services,186019,low,normal
+39,PO-2026-2040,Atlas Industrial,203340,high,urgent
+40,PO-2026-2041,Casa Equipment,35661,low,urgent
+41,PO-2026-2042,Rabat Supplies,52982,low,normal
+42,PO-2026-2043,Tanger Logistics Parts,70303,medium,normal
+43,PO-2026-2044,Kenitra Maintenance,87624,low,normal
+44,PO-2026-2045,Marrakech Office Solutions,104945,low,urgent
+45,PO-2026-2046,Agadir Packaging,122266,medium,urgent
+46,PO-2026-2047,Fes Technical Services,139587,low,normal
+47,PO-2026-2048,Atlas Industrial,156908,high,normal
+48,PO-2026-2049,Casa Equipment,174229,medium,normal
+49,PO-2026-2050,Rabat Supplies,191550,low,urgent
+50,PO-2026-2051,Tanger Logistics Parts,23871,low,urgent
+51,PO-2026-2052,Kenitra Maintenance,41192,medium,normal
+52,PO-2026-2053,Marrakech Office Solutions,58513,low,normal
+53,PO-2026-2054,Agadir Packaging,75834,low,normal
+54,PO-2026-2055,Fes Technical Services,93155,medium,urgent
+55,PO-2026-2056,Atlas Industrial,110476,high,urgent
+56,PO-2026-2057,Casa Equipment,127797,low,normal
+57,PO-2026-2058,Rabat Supplies,145118,medium,normal
+58,PO-2026-2059,Tanger Logistics Parts,162439,low,normal
+59,PO-2026-2060,Kenitra Maintenance,179760,low,urgent
+60,PO-2026-2061,Marrakech Office Solutions,197081,medium,urgent
+61,PO-2026-2062,Agadir Packaging,29402,low,normal
+62,PO-2026-2063,Fes Technical Services,46723,low,normal
+63,PO-2026-2064,Atlas Industrial,64044,high,normal
+64,PO-2026-2065,Casa Equipment,81365,low,urgent
+65,PO-2026-2066,Rabat Supplies,98686,low,urgent
+66,PO-2026-2067,Tanger Logistics Parts,116007,medium,normal
+67,PO-2026-2068,Kenitra Maintenance,133328,low,normal
+68,PO-2026-2069,Marrakech Office Solutions,150649,low,normal
+69,PO-2026-2070,Agadir Packaging,167970,medium,urgent
+70,PO-2026-2071,Fes Technical Services,185291,low,urgent
+71,PO-2026-2072,Atlas Industrial,202612,high,normal
+72,PO-2026-2073,Casa Equipment,34933,medium,normal
+73,PO-2026-2074,Rabat Supplies,52254,low,normal
+74,PO-2026-2075,Tanger Logistics Parts,69575,low,urgent
+75,PO-2026-2076,Kenitra Maintenance,86896,medium,urgent
+76,PO-2026-2077,Marrakech Office Solutions,104217,low,normal
+77,PO-2026-2078,Agadir Packaging,121538,low,normal
+78,PO-2026-2079,Fes Technical Services,138859,medium,normal
+79,PO-2026-2080,Atlas Industrial,156180,high,urgent
+80,PO-2026-2081,Casa Equipment,173501,low,urgent
+81,PO-2026-2082,Rabat Supplies,190822,medium,normal
+82,PO-2026-2083,Tanger Logistics Parts,23143,low,normal
+83,PO-2026-2084,Kenitra Maintenance,40464,low,normal
+84,PO-2026-2085,Marrakech Office Solutions,57785,medium,urgent
+85,PO-2026-2086,Agadir Packaging,75106,low,urgent
+86,PO-2026-2087,Fes Technical Services,92427,low,normal
+87,PO-2026-2088,Atlas Industrial,109748,high,normal
+88,PO-2026-2089,Casa Equipment,127069,low,normal
+89,PO-2026-2090,Rabat Supplies,144390,low,urgent
+90,PO-2026-2091,Tanger Logistics Parts,161711,medium,urgent
+91,PO-2026-2092,Kenitra Maintenance,179032,low,normal
+92,PO-2026-2093,Marrakech Office Solutions,196353,low,normal
+93,PO-2026-2094,Agadir Packaging,28674,medium,normal
+94,PO-2026-2095,Fes Technical Services,45995,low,urgent
+95,PO-2026-2096,Atlas Industrial,63316,high,urgent
+96,PO-2026-2097,Casa Equipment,80637,medium,normal
+97,PO-2026-2098,Rabat Supplies,97958,low,normal
+98,PO-2026-2099,Tanger Logistics Parts,115279,low,normal
+99,PO-2026-2100,Kenitra Maintenance,132600,medium,urgent
+100,PO-2026-2101,Marrakech Office Solutions,149921,low,urgent
+101,PO-2026-2102,Agadir Packaging,167242,low,normal
+102,PO-2026-2103,Fes Technical Services,184563,medium,normal
+103,PO-2026-2104,Atlas Industrial,201884,high,normal
+104,PO-2026-2105,Casa Equipment,34205,low,urgent
+105,PO-2026-2106,Rabat Supplies,51526,medium,urgent
+106,PO-2026-2107,Tanger Logistics Parts,68847,low,normal
+107,PO-2026-2108,Kenitra Maintenance,86168,low,normal
+108,PO-2026-2109,Marrakech Office Solutions,103489,medium,normal
+109,PO-2026-2110,Agadir Packaging,120810,low,urgent
+110,PO-2026-2111,Fes Technical Services,138131,low,urgent
+111,PO-2026-2112,Atlas Industrial,155452,high,normal
+112,PO-2026-2113,Casa Equipment,172773,low,normal
+113,PO-2026-2114,Rabat Supplies,190094,low,normal
+114,PO-2026-2115,Tanger Logistics Parts,22415,medium,urgent
+115,PO-2026-2116,Kenitra Maintenance,39736,low,urgent
+116,PO-2026-2117,Marrakech Office Solutions,57057,low,normal
+117,PO-2026-2118,Agadir Packaging,74378,medium,normal
+118,PO-2026-2119,Fes Technical Services,91699,low,normal
+119,PO-2026-2120,Atlas Industrial,109020,high,urgent
+120,PO-2026-2121,Casa Equipment,126341,medium,urgent
+121,PO-2026-2122,Rabat Supplies,143662,low,normal
+122,PO-2026-2123,Tanger Logistics Parts,160983,low,normal
+123,PO-2026-2124,Kenitra Maintenance,178304,medium,normal
+124,PO-2026-2125,Marrakech Office Solutions,195625,low,urgent
+125,PO-2026-2126,Agadir Packaging,27946,low,urgent
+126,PO-2026-2127,Fes Technical Services,45267,medium,normal
+127,PO-2026-2128,Atlas Industrial,62588,high,normal
+128,PO-2026-2129,Casa Equipment,79909,low,normal
+129,PO-2026-2130,Rabat Supplies,97230,medium,urgent
+130,PO-2026-2131,Tanger Logistics Parts,114551,low,urgent
+131,PO-2026-2132,Kenitra Maintenance,131872,low,normal
+132,PO-2026-2133,Marrakech Office Solutions,149193,medium,normal
+133,PO-2026-2134,Agadir Packaging,166514,low,normal
+134,PO-2026-2135,Fes Technical Services,183835,low,urgent
+135,PO-2026-2136,Atlas Industrial,201156,high,urgent
+136,PO-2026-2137,Casa Equipment,33477,low,normal
+137,PO-2026-2138,Rabat Supplies,50798,low,normal
+138,PO-2026-2139,Tanger Logistics Parts,68119,medium,normal
+139,PO-2026-2140,Kenitra Maintenance,85440,low,urgent
+140,PO-2026-2141,Marrakech Office Solutions,102761,low,urgent
+141,PO-2026-2142,Agadir Packaging,120082,medium,normal
+142,PO-2026-2143,Fes Technical Services,137403,low,normal
+143,PO-2026-2144,Atlas Industrial,154724,high,normal
+144,PO-2026-2145,Casa Equipment,172045,medium,urgent
+145,PO-2026-2146,Rabat Supplies,189366,low,urgent
+146,PO-2026-2147,Tanger Logistics Parts,21687,low,normal
+147,PO-2026-2148,Kenitra Maintenance,39008,medium,normal
+148,PO-2026-2149,Marrakech Office Solutions,56329,low,normal
+149,PO-2026-2150,Agadir Packaging,73650,low,urgent
+150,PO-2026-2151,Fes Technical Services,90971,medium,urgent
+151,PO-2026-2152,Atlas Industrial,108292,high,normal
+152,PO-2026-2153,Casa Equipment,125613,low,normal
+153,PO-2026-2154,Rabat Supplies,142934,medium,normal
+154,PO-2026-2155,Tanger Logistics Parts,160255,low,urgent
+155,PO-2026-2156,Kenitra Maintenance,177576,low,urgent
+156,PO-2026-2157,Marrakech Office Solutions,194897,medium,normal
+157,PO-2026-2158,Agadir Packaging,27218,low,normal
+158,PO-2026-2159,Fes Technical Services,44539,low,normal
+159,PO-2026-2160,Atlas Industrial,61860,high,urgent
+160,PO-2026-2161,Casa Equipment,79181,low,urgent
+161,PO-2026-2162,Rabat Supplies,96502,low,normal
+162,PO-2026-2163,Tanger Logistics Parts,113823,medium,normal
+163,PO-2026-2164,Kenitra Maintenance,131144,low,normal
+164,PO-2026-2165,Marrakech Office Solutions,148465,low,urgent
+165,PO-2026-2166,Agadir Packaging,165786,medium,urgent
+166,PO-2026-2167,Fes Technical Services,183107,low,normal
+167,PO-2026-2168,Atlas Industrial,200428,high,normal
+168,PO-2026-2169,Casa Equipment,32749,medium,normal
+169,PO-2026-2170,Rabat Supplies,50070,low,urgent
+170,PO-2026-2171,Tanger Logistics Parts,67391,low,urgent
+171,PO-2026-2172,Kenitra Maintenance,84712,medium,normal
+172,PO-2026-2173,Marrakech Office Solutions,102033,low,normal
+173,PO-2026-2174,Agadir Packaging,119354,low,normal
+174,PO-2026-2175,Fes Technical Services,136675,medium,urgent
+175,PO-2026-2176,Atlas Industrial,153996,high,urgent
+176,PO-2026-2177,Casa Equipment,171317,low,normal
+177,PO-2026-2178,Rabat Supplies,188638,medium,normal
+178,PO-2026-2179,Tanger Logistics Parts,20959,low,normal
+179,PO-2026-2180,Kenitra Maintenance,38280,low,urgent
+180,PO-2026-2181,Marrakech Office Solutions,55601,medium,urgent
+181,PO-2026-2182,Agadir Packaging,72922,low,normal
+182,PO-2026-2183,Fes Technical Services,90243,low,normal
+183,PO-2026-2184,Atlas Industrial,107564,high,normal
+184,PO-2026-2185,Casa Equipment,124885,low,urgent
+185,PO-2026-2186,Rabat Supplies,142206,low,urgent
+186,PO-2026-2187,Tanger Logistics Parts,159527,medium,normal
+187,PO-2026-2188,Kenitra Maintenance,176848,low,normal
+188,PO-2026-2189,Marrakech Office Solutions,194169,low,normal
+189,PO-2026-2190,Agadir Packaging,26490,medium,urgent
+190,PO-2026-2191,Fes Technical Services,43811,low,urgent
+191,PO-2026-2192,Atlas Industrial,61132,high,normal
+192,PO-2026-2193,Casa Equipment,78453,medium,normal
+193,PO-2026-2194,Rabat Supplies,95774,low,normal
+194,PO-2026-2195,Tanger Logistics Parts,113095,low,urgent
+195,PO-2026-2196,Kenitra Maintenance,130416,medium,urgent
+196,PO-2026-2197,Marrakech Office Solutions,147737,low,normal
+197,PO-2026-2198,Agadir Packaging,165058,low,normal
+198,PO-2026-2199,Fes Technical Services,182379,medium,normal
+199,PO-2026-2200,Atlas Industrial,199700,high,urgent

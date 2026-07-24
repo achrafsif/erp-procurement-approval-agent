@@ -1,0 +1,401 @@
+index,po_id,supplier_name,amount_mad,supplier_risk,urgency
+1,PO-2026-0001,Kenitra Maintenance,25821,low,normal
+2,PO-2026-0002,Rabat Supplies,43142,low,normal
+3,PO-2026-0003,Atlas Industrial,60463,low,normal
+4,PO-2026-0004,Marrakech Office Solutions,77784,low,normal
+5,PO-2026-0005,Casa Equipment,95105,medium,normal
+6,PO-2026-0006,Agadir Cold Chain,112426,low,normal
+7,PO-2026-0007,Sahara Components,129747,low,high
+8,PO-2026-0008,Oujda Distribution,147068,low,normal
+9,PO-2026-0009,Tanger Services,164389,low,normal
+10,PO-2026-0010,Maghreb Packaging,181710,medium,normal
+11,PO-2026-0011,Fes Technical Parts,22531,high,normal
+12,PO-2026-0012,North Logistics,39852,low,normal
+13,PO-2026-0013,Kenitra Maintenance,57173,low,urgent
+14,PO-2026-0014,Rabat Supplies,74494,low,high
+15,PO-2026-0015,Atlas Industrial,91815,medium,normal
+16,PO-2026-0016,Marrakech Office Solutions,109136,low,normal
+17,PO-2026-0017,Casa Equipment,246457,low,normal
+18,PO-2026-0018,Agadir Cold Chain,143778,low,normal
+19,PO-2026-0019,Sahara Components,161099,low,normal
+20,PO-2026-0020,Oujda Distribution,178420,medium,normal
+21,PO-2026-0021,Tanger Services,19241,low,high
+22,PO-2026-0022,Maghreb Packaging,36562,high,normal
+23,PO-2026-0023,Fes Technical Parts,53883,low,normal
+24,PO-2026-0024,North Logistics,71204,low,normal
+25,PO-2026-0025,Kenitra Maintenance,88525,medium,normal
+26,PO-2026-0026,Rabat Supplies,105846,low,urgent
+27,PO-2026-0027,Atlas Industrial,123167,low,normal
+28,PO-2026-0028,Marrakech Office Solutions,140488,low,high
+29,PO-2026-0029,Casa Equipment,157809,blocked,normal
+30,PO-2026-0030,Agadir Cold Chain,175130,medium,normal
+31,PO-2026-0031,Sahara Components,15951,low,critical
+32,PO-2026-0032,Oujda Distribution,33272,low,normal
+33,PO-2026-0033,Tanger Services,50593,high,normal
+34,PO-2026-0034,Maghreb Packaging,187914,low,normal
+35,PO-2026-0035,Fes Technical Parts,85235,medium,high
+36,PO-2026-0036,North Logistics,102556,low,normal
+37,PO-2026-0037,Kenitra Maintenance,119877,low,normal
+38,PO-2026-0038,Rabat Supplies,137198,low,normal
+39,PO-2026-0039,Atlas Industrial,154519,low,urgent
+40,PO-2026-0040,Marrakech Office Solutions,171840,medium,normal
+41,PO-2026-0041,Casa Equipment,12661,low,normal
+42,PO-2026-0042,Agadir Cold Chain,29982,low,high
+43,PO-2026-0043,Sahara Components,277303,low,normal
+44,PO-2026-0044,Oujda Distribution,64624,high,normal
+45,PO-2026-0045,Tanger Services,81945,medium,normal
+46,PO-2026-0046,Maghreb Packaging,99266,low,normal
+47,PO-2026-0047,Fes Technical Parts,116587,low,normal
+48,PO-2026-0048,North Logistics,133908,low,normal
+49,PO-2026-0049,Kenitra Maintenance,151229,low,high
+50,PO-2026-0050,Rabat Supplies,168550,medium,normal
+51,PO-2026-0051,Atlas Industrial,129371,low,normal
+52,PO-2026-0052,Marrakech Office Solutions,26692,low,urgent
+53,PO-2026-0053,Casa Equipment,44013,low,normal
+54,PO-2026-0054,Agadir Cold Chain,61334,low,normal
+55,PO-2026-0055,Sahara Components,78655,high,normal
+56,PO-2026-0056,Oujda Distribution,95976,low,high
+57,PO-2026-0057,Tanger Services,113297,low,normal
+58,PO-2026-0058,Maghreb Packaging,130618,blocked,normal
+59,PO-2026-0059,Fes Technical Parts,147939,low,normal
+60,PO-2026-0060,North Logistics,165260,medium,normal
+61,PO-2026-0061,Kenitra Maintenance,182581,low,normal
+62,PO-2026-0062,Rabat Supplies,23402,low,critical
+63,PO-2026-0063,Atlas Industrial,40723,low,high
+64,PO-2026-0064,Marrakech Office Solutions,58044,low,normal
+65,PO-2026-0065,Casa Equipment,75365,medium,urgent
+66,PO-2026-0066,Agadir Cold Chain,92686,high,normal
+67,PO-2026-0067,Sahara Components,110007,low,normal
+68,PO-2026-0068,Oujda Distribution,247328,low,normal
+69,PO-2026-0069,Tanger Services,144649,low,normal
+70,PO-2026-0070,Maghreb Packaging,161970,medium,high
+71,PO-2026-0071,Fes Technical Parts,179291,low,normal
+72,PO-2026-0072,North Logistics,20112,low,normal
+73,PO-2026-0073,Kenitra Maintenance,37433,low,normal
+74,PO-2026-0074,Rabat Supplies,54754,low,normal
+75,PO-2026-0075,Atlas Industrial,72075,medium,normal
+76,PO-2026-0076,Marrakech Office Solutions,89396,low,normal
+77,PO-2026-0077,Casa Equipment,106717,high,high
+78,PO-2026-0078,Agadir Cold Chain,124038,low,urgent
+79,PO-2026-0079,Sahara Components,141359,low,normal
+80,PO-2026-0080,Oujda Distribution,158680,medium,normal
+81,PO-2026-0081,Tanger Services,176001,low,normal
+82,PO-2026-0082,Maghreb Packaging,16822,low,normal
+83,PO-2026-0083,Fes Technical Parts,34143,low,normal
+84,PO-2026-0084,North Logistics,51464,low,high
+85,PO-2026-0085,Kenitra Maintenance,188785,medium,normal
+86,PO-2026-0086,Rabat Supplies,316106,low,normal
+87,PO-2026-0087,Atlas Industrial,103427,blocked,normal
+88,PO-2026-0088,Marrakech Office Solutions,120748,high,normal
+89,PO-2026-0089,Casa Equipment,138069,low,normal
+90,PO-2026-0090,Agadir Cold Chain,155390,medium,normal
+91,PO-2026-0091,Sahara Components,172711,low,urgent
+92,PO-2026-0092,Oujda Distribution,13532,low,normal
+93,PO-2026-0093,Tanger Services,30853,low,critical
+94,PO-2026-0094,Maghreb Packaging,48174,low,normal
+95,PO-2026-0095,Fes Technical Parts,65495,medium,normal
+96,PO-2026-0096,North Logistics,82816,low,normal
+97,PO-2026-0097,Kenitra Maintenance,100137,low,normal
+98,PO-2026-0098,Rabat Supplies,117458,low,high
+99,PO-2026-0099,Atlas Industrial,134779,high,normal
+100,PO-2026-0100,Marrakech Office Solutions,152100,medium,normal
+101,PO-2026-0101,Casa Equipment,169421,low,normal
+102,PO-2026-0102,Agadir Cold Chain,130242,low,normal
+103,PO-2026-0103,Sahara Components,27563,low,normal
+104,PO-2026-0104,Oujda Distribution,44884,low,urgent
+105,PO-2026-0105,Tanger Services,62205,medium,high
+106,PO-2026-0106,Maghreb Packaging,79526,low,normal
+107,PO-2026-0107,Fes Technical Parts,96847,low,normal
+108,PO-2026-0108,North Logistics,114168,low,normal
+109,PO-2026-0109,Kenitra Maintenance,131489,low,normal
+110,PO-2026-0110,Rabat Supplies,148810,high,normal
+111,PO-2026-0111,Atlas Industrial,166131,low,normal
+112,PO-2026-0112,Marrakech Office Solutions,183452,low,high
+113,PO-2026-0113,Casa Equipment,24273,low,normal
+114,PO-2026-0114,Agadir Cold Chain,41594,low,normal
+115,PO-2026-0115,Sahara Components,58915,medium,normal
+116,PO-2026-0116,Oujda Distribution,76236,blocked,normal
+117,PO-2026-0117,Tanger Services,93557,low,urgent
+118,PO-2026-0118,Maghreb Packaging,110878,low,normal
+119,PO-2026-0119,Fes Technical Parts,248199,low,high
+120,PO-2026-0120,North Logistics,145520,medium,normal
+121,PO-2026-0121,Kenitra Maintenance,162841,high,normal
+122,PO-2026-0122,Rabat Supplies,180162,low,normal
+123,PO-2026-0123,Atlas Industrial,20983,low,normal
+124,PO-2026-0124,Marrakech Office Solutions,38304,low,critical
+125,PO-2026-0125,Casa Equipment,55625,medium,normal
+126,PO-2026-0126,Agadir Cold Chain,72946,low,high
+127,PO-2026-0127,Sahara Components,90267,low,normal
+128,PO-2026-0128,Oujda Distribution,107588,low,normal
+129,PO-2026-0129,Tanger Services,354909,low,normal
+130,PO-2026-0130,Maghreb Packaging,142230,medium,urgent
+131,PO-2026-0131,Fes Technical Parts,159551,low,normal
+132,PO-2026-0132,North Logistics,176872,high,normal
+133,PO-2026-0133,Kenitra Maintenance,17693,low,high
+134,PO-2026-0134,Rabat Supplies,35014,low,normal
+135,PO-2026-0135,Atlas Industrial,52335,medium,normal
+136,PO-2026-0136,Marrakech Office Solutions,189656,low,normal
+137,PO-2026-0137,Casa Equipment,86977,low,normal
+138,PO-2026-0138,Agadir Cold Chain,104298,low,normal
+139,PO-2026-0139,Sahara Components,121619,low,normal
+140,PO-2026-0140,Oujda Distribution,138940,medium,high
+141,PO-2026-0141,Tanger Services,156261,low,normal
+142,PO-2026-0142,Maghreb Packaging,173582,low,normal
+143,PO-2026-0143,Fes Technical Parts,14403,high,urgent
+144,PO-2026-0144,North Logistics,31724,low,normal
+145,PO-2026-0145,Kenitra Maintenance,49045,blocked,normal
+146,PO-2026-0146,Rabat Supplies,66366,low,normal
+147,PO-2026-0147,Atlas Industrial,83687,low,high
+148,PO-2026-0148,Marrakech Office Solutions,101008,low,normal
+149,PO-2026-0149,Casa Equipment,118329,low,normal
+150,PO-2026-0150,Agadir Cold Chain,135650,medium,normal
+151,PO-2026-0151,Sahara Components,152971,low,normal
+152,PO-2026-0152,Oujda Distribution,170292,low,normal
+153,PO-2026-0153,Tanger Services,131113,low,normal
+154,PO-2026-0154,Maghreb Packaging,28434,high,high
+155,PO-2026-0155,Fes Technical Parts,45755,medium,critical
+156,PO-2026-0156,North Logistics,63076,low,urgent
+157,PO-2026-0157,Kenitra Maintenance,80397,low,normal
+158,PO-2026-0158,Rabat Supplies,97718,low,normal
+159,PO-2026-0159,Atlas Industrial,115039,low,normal
+160,PO-2026-0160,Marrakech Office Solutions,132360,medium,normal
+161,PO-2026-0161,Casa Equipment,149681,low,high
+162,PO-2026-0162,Agadir Cold Chain,167002,low,normal
+163,PO-2026-0163,Sahara Components,184323,low,normal
+164,PO-2026-0164,Oujda Distribution,25144,low,normal
+165,PO-2026-0165,Tanger Services,42465,high,normal
+166,PO-2026-0166,Maghreb Packaging,59786,low,normal
+167,PO-2026-0167,Fes Technical Parts,77107,low,normal
+168,PO-2026-0168,North Logistics,94428,low,high
+169,PO-2026-0169,Kenitra Maintenance,111749,low,urgent
+170,PO-2026-0170,Rabat Supplies,249070,medium,normal
+171,PO-2026-0171,Atlas Industrial,146391,low,normal
+172,PO-2026-0172,Marrakech Office Solutions,393712,low,normal
+173,PO-2026-0173,Casa Equipment,181033,low,normal
+174,PO-2026-0174,Agadir Cold Chain,21854,blocked,normal
+175,PO-2026-0175,Sahara Components,39175,medium,high
+176,PO-2026-0176,Oujda Distribution,56496,high,normal
+177,PO-2026-0177,Tanger Services,73817,low,normal
+178,PO-2026-0178,Maghreb Packaging,91138,low,normal
+179,PO-2026-0179,Fes Technical Parts,108459,low,normal
+180,PO-2026-0180,North Logistics,125780,medium,normal
+181,PO-2026-0181,Kenitra Maintenance,143101,low,normal
+182,PO-2026-0182,Rabat Supplies,160422,low,urgent
+183,PO-2026-0183,Atlas Industrial,177743,low,normal
+184,PO-2026-0184,Marrakech Office Solutions,18564,low,normal
+185,PO-2026-0185,Casa Equipment,35885,medium,normal
+186,PO-2026-0186,Agadir Cold Chain,53206,low,critical
+187,PO-2026-0187,Sahara Components,190527,high,normal
+188,PO-2026-0188,Oujda Distribution,87848,low,normal
+189,PO-2026-0189,Tanger Services,105169,low,high
+190,PO-2026-0190,Maghreb Packaging,122490,medium,normal
+191,PO-2026-0191,Fes Technical Parts,139811,low,normal
+192,PO-2026-0192,North Logistics,157132,low,normal
+193,PO-2026-0193,Kenitra Maintenance,174453,low,normal
+194,PO-2026-0194,Rabat Supplies,15274,low,normal
+195,PO-2026-0195,Atlas Industrial,32595,medium,urgent
+196,PO-2026-0196,Marrakech Office Solutions,49916,low,high
+197,PO-2026-0197,Casa Equipment,67237,low,normal
+198,PO-2026-0198,Agadir Cold Chain,84558,high,normal
+199,PO-2026-0199,Sahara Components,101879,low,normal
+200,PO-2026-0200,Oujda Distribution,119200,medium,normal
+201,PO-2026-0201,Tanger Services,136521,low,normal
+202,PO-2026-0202,Maghreb Packaging,153842,low,normal
+203,PO-2026-0203,Fes Technical Parts,171163,blocked,high
+204,PO-2026-0204,North Logistics,131984,low,normal
+205,PO-2026-0205,Kenitra Maintenance,29305,medium,normal
+206,PO-2026-0206,Rabat Supplies,46626,low,normal
+207,PO-2026-0207,Atlas Industrial,63947,low,normal
+208,PO-2026-0208,Marrakech Office Solutions,81268,low,urgent
+209,PO-2026-0209,Casa Equipment,98589,high,normal
+210,PO-2026-0210,Agadir Cold Chain,115910,medium,high
+211,PO-2026-0211,Sahara Components,133231,low,normal
+212,PO-2026-0212,Oujda Distribution,150552,low,normal
+213,PO-2026-0213,Tanger Services,167873,low,normal
+214,PO-2026-0214,Maghreb Packaging,8694,low,normal
+215,PO-2026-0215,Fes Technical Parts,256015,medium,normal
+216,PO-2026-0216,North Logistics,43336,low,normal
+217,PO-2026-0217,Kenitra Maintenance,60657,low,critical
+218,PO-2026-0218,Rabat Supplies,77978,low,normal
+219,PO-2026-0219,Atlas Industrial,95299,low,normal
+220,PO-2026-0220,Marrakech Office Solutions,112620,high,normal
+221,PO-2026-0221,Casa Equipment,249941,low,urgent
+222,PO-2026-0222,Agadir Cold Chain,147262,low,normal
+223,PO-2026-0223,Sahara Components,164583,low,normal
+224,PO-2026-0224,Oujda Distribution,181904,low,high
+225,PO-2026-0225,Tanger Services,22725,medium,normal
+226,PO-2026-0226,Maghreb Packaging,40046,low,normal
+227,PO-2026-0227,Fes Technical Parts,57367,low,normal
+228,PO-2026-0228,North Logistics,74688,low,normal
+229,PO-2026-0229,Kenitra Maintenance,92009,low,normal
+230,PO-2026-0230,Rabat Supplies,109330,medium,normal
+231,PO-2026-0231,Atlas Industrial,126651,high,high
+232,PO-2026-0232,Marrakech Office Solutions,143972,blocked,normal
+233,PO-2026-0233,Casa Equipment,161293,low,normal
+234,PO-2026-0234,Agadir Cold Chain,178614,low,urgent
+235,PO-2026-0235,Sahara Components,19435,medium,normal
+236,PO-2026-0236,Oujda Distribution,36756,low,normal
+237,PO-2026-0237,Tanger Services,54077,low,normal
+238,PO-2026-0238,Maghreb Packaging,191398,low,high
+239,PO-2026-0239,Fes Technical Parts,88719,low,normal
+240,PO-2026-0240,North Logistics,106040,medium,normal
+241,PO-2026-0241,Kenitra Maintenance,123361,low,normal
+242,PO-2026-0242,Rabat Supplies,140682,high,normal
+243,PO-2026-0243,Atlas Industrial,158003,low,normal
+244,PO-2026-0244,Marrakech Office Solutions,175324,low,normal
+245,PO-2026-0245,Casa Equipment,16145,medium,high
+246,PO-2026-0246,Agadir Cold Chain,33466,low,normal
+247,PO-2026-0247,Sahara Components,50787,low,urgent
+248,PO-2026-0248,Oujda Distribution,68108,low,critical
+249,PO-2026-0249,Tanger Services,85429,low,normal
+250,PO-2026-0250,Maghreb Packaging,102750,medium,normal
+251,PO-2026-0251,Fes Technical Parts,120071,low,normal
+252,PO-2026-0252,North Logistics,137392,low,high
+253,PO-2026-0253,Kenitra Maintenance,154713,high,normal
+254,PO-2026-0254,Rabat Supplies,172034,low,normal
+255,PO-2026-0255,Atlas Industrial,132855,medium,normal
+256,PO-2026-0256,Marrakech Office Solutions,30176,low,normal
+257,PO-2026-0257,Casa Equipment,47497,low,normal
+258,PO-2026-0258,Agadir Cold Chain,294818,low,normal
+259,PO-2026-0259,Sahara Components,82139,low,high
+260,PO-2026-0260,Oujda Distribution,99460,medium,urgent
+261,PO-2026-0261,Tanger Services,116781,blocked,normal
+262,PO-2026-0262,Maghreb Packaging,134102,low,normal
+263,PO-2026-0263,Fes Technical Parts,151423,low,normal
+264,PO-2026-0264,North Logistics,168744,high,normal
+265,PO-2026-0265,Kenitra Maintenance,9565,medium,normal
+266,PO-2026-0266,Rabat Supplies,26886,low,high
+267,PO-2026-0267,Atlas Industrial,44207,low,normal
+268,PO-2026-0268,Marrakech Office Solutions,61528,low,normal
+269,PO-2026-0269,Casa Equipment,78849,low,normal
+270,PO-2026-0270,Agadir Cold Chain,96170,medium,normal
+271,PO-2026-0271,Sahara Components,113491,low,normal
+272,PO-2026-0272,Oujda Distribution,250812,low,normal
+273,PO-2026-0273,Tanger Services,148133,low,urgent
+274,PO-2026-0274,Maghreb Packaging,165454,low,normal
+275,PO-2026-0275,Fes Technical Parts,182775,high,normal
+276,PO-2026-0276,North Logistics,23596,low,normal
+277,PO-2026-0277,Kenitra Maintenance,40917,low,normal
+278,PO-2026-0278,Rabat Supplies,58238,low,normal
+279,PO-2026-0279,Atlas Industrial,75559,low,critical
+280,PO-2026-0280,Marrakech Office Solutions,92880,medium,high
+281,PO-2026-0281,Casa Equipment,110201,low,normal
+282,PO-2026-0282,Agadir Cold Chain,127522,low,normal
+283,PO-2026-0283,Sahara Components,144843,low,normal
+284,PO-2026-0284,Oujda Distribution,162164,low,normal
+285,PO-2026-0285,Tanger Services,179485,medium,normal
+286,PO-2026-0286,Maghreb Packaging,20306,high,urgent
+287,PO-2026-0287,Fes Technical Parts,37627,low,high
+288,PO-2026-0288,North Logistics,54948,low,normal
+289,PO-2026-0289,Kenitra Maintenance,192269,low,normal
+290,PO-2026-0290,Rabat Supplies,89590,blocked,normal
+291,PO-2026-0291,Atlas Industrial,106911,low,normal
+292,PO-2026-0292,Marrakech Office Solutions,124232,low,normal
+293,PO-2026-0293,Casa Equipment,141553,low,normal
+294,PO-2026-0294,Agadir Cold Chain,158874,low,high
+295,PO-2026-0295,Sahara Components,176195,medium,normal
+296,PO-2026-0296,Oujda Distribution,17016,low,normal
+297,PO-2026-0297,Tanger Services,34337,high,normal
+298,PO-2026-0298,Maghreb Packaging,51658,low,normal
+299,PO-2026-0299,Fes Technical Parts,68979,low,urgent
+300,PO-2026-0300,North Logistics,86300,medium,normal
+301,PO-2026-0301,Kenitra Maintenance,333621,low,high
+302,PO-2026-0302,Rabat Supplies,120942,low,normal
+303,PO-2026-0303,Atlas Industrial,138263,low,normal
+304,PO-2026-0304,Marrakech Office Solutions,155584,low,normal
+305,PO-2026-0305,Casa Equipment,172905,medium,normal
+306,PO-2026-0306,Agadir Cold Chain,133726,low,normal
+307,PO-2026-0307,Sahara Components,31047,low,normal
+308,PO-2026-0308,Oujda Distribution,48368,high,high
+309,PO-2026-0309,Tanger Services,65689,low,normal
+310,PO-2026-0310,Maghreb Packaging,83010,medium,critical
+311,PO-2026-0311,Fes Technical Parts,100331,low,normal
+312,PO-2026-0312,North Logistics,117652,low,urgent
+313,PO-2026-0313,Kenitra Maintenance,134973,low,normal
+314,PO-2026-0314,Rabat Supplies,152294,low,normal
+315,PO-2026-0315,Atlas Industrial,169615,medium,high
+316,PO-2026-0316,Marrakech Office Solutions,10436,low,normal
+317,PO-2026-0317,Casa Equipment,27757,low,normal
+318,PO-2026-0318,Agadir Cold Chain,45078,low,normal
+319,PO-2026-0319,Sahara Components,62399,blocked,normal
+320,PO-2026-0320,Oujda Distribution,79720,medium,normal
+321,PO-2026-0321,Tanger Services,97041,low,normal
+322,PO-2026-0322,Maghreb Packaging,114362,low,high
+323,PO-2026-0323,Fes Technical Parts,251683,low,normal
+324,PO-2026-0324,North Logistics,149004,low,normal
+325,PO-2026-0325,Kenitra Maintenance,166325,medium,urgent
+326,PO-2026-0326,Rabat Supplies,183646,low,normal
+327,PO-2026-0327,Atlas Industrial,24467,low,normal
+328,PO-2026-0328,Marrakech Office Solutions,41788,low,normal
+329,PO-2026-0329,Casa Equipment,59109,low,high
+330,PO-2026-0330,Agadir Cold Chain,76430,high,normal
+331,PO-2026-0331,Sahara Components,93751,low,normal
+332,PO-2026-0332,Oujda Distribution,111072,low,normal
+333,PO-2026-0333,Tanger Services,128393,low,normal
+334,PO-2026-0334,Maghreb Packaging,145714,low,normal
+335,PO-2026-0335,Fes Technical Parts,163035,medium,normal
+336,PO-2026-0336,North Logistics,180356,low,high
+337,PO-2026-0337,Kenitra Maintenance,21177,low,normal
+338,PO-2026-0338,Rabat Supplies,38498,low,urgent
+339,PO-2026-0339,Atlas Industrial,55819,low,normal
+340,PO-2026-0340,Marrakech Office Solutions,193140,medium,normal
+341,PO-2026-0341,Casa Equipment,90461,high,critical
+342,PO-2026-0342,Agadir Cold Chain,107782,low,normal
+343,PO-2026-0343,Sahara Components,125103,low,high
+344,PO-2026-0344,Oujda Distribution,372424,low,normal
+345,PO-2026-0345,Tanger Services,159745,medium,normal
+346,PO-2026-0346,Maghreb Packaging,177066,low,normal
+347,PO-2026-0347,Fes Technical Parts,17887,low,normal
+348,PO-2026-0348,North Logistics,35208,blocked,normal
+349,PO-2026-0349,Kenitra Maintenance,52529,low,normal
+350,PO-2026-0350,Rabat Supplies,69850,medium,high
+351,PO-2026-0351,Atlas Industrial,87171,low,urgent
+352,PO-2026-0352,Marrakech Office Solutions,104492,high,normal
+353,PO-2026-0353,Casa Equipment,121813,low,normal
+354,PO-2026-0354,Agadir Cold Chain,139134,low,normal
+355,PO-2026-0355,Sahara Components,156455,medium,normal
+356,PO-2026-0356,Oujda Distribution,173776,low,normal
+357,PO-2026-0357,Tanger Services,134597,low,high
+358,PO-2026-0358,Maghreb Packaging,31918,low,normal
+359,PO-2026-0359,Fes Technical Parts,49239,low,normal
+360,PO-2026-0360,North Logistics,66560,medium,normal
+361,PO-2026-0361,Kenitra Maintenance,83881,low,normal
+362,PO-2026-0362,Rabat Supplies,101202,low,normal
+363,PO-2026-0363,Atlas Industrial,118523,high,normal
+364,PO-2026-0364,Marrakech Office Solutions,135844,low,urgent
+365,PO-2026-0365,Casa Equipment,153165,medium,normal
+366,PO-2026-0366,Agadir Cold Chain,170486,low,normal
+367,PO-2026-0367,Sahara Components,11307,low,normal
+368,PO-2026-0368,Oujda Distribution,28628,low,normal
+369,PO-2026-0369,Tanger Services,45949,low,normal
+370,PO-2026-0370,Maghreb Packaging,63270,medium,normal
+371,PO-2026-0371,Fes Technical Parts,80591,low,high
+372,PO-2026-0372,North Logistics,97912,low,critical
+373,PO-2026-0373,Kenitra Maintenance,115233,low,normal
+374,PO-2026-0374,Rabat Supplies,252554,high,normal
+375,PO-2026-0375,Atlas Industrial,149875,medium,normal
+376,PO-2026-0376,Marrakech Office Solutions,167196,low,normal
+377,PO-2026-0377,Casa Equipment,184517,blocked,urgent
+378,PO-2026-0378,Agadir Cold Chain,25338,low,high
+379,PO-2026-0379,Sahara Components,42659,low,normal
+380,PO-2026-0380,Oujda Distribution,59980,medium,normal
+381,PO-2026-0001,Kenitra Maintenance,25821,low,normal
+382,PO-2026-0002,Rabat Supplies,43142,low,normal
+383,PO-2026-0003,Atlas Industrial,60463,low,normal
+384,PO-2026-0004,Marrakech Office Solutions,77784,low,normal
+385,PO-2026-0005,Casa Equipment,95105,medium,normal
+386,PO-2026-0006,Agadir Cold Chain,112426,low,normal
+387,PO-2026-0007,Sahara Components,129747,low,high
+388,PO-2026-0008,Oujda Distribution,147068,low,normal
+389,PO-2026-0009,Tanger Services,164389,low,normal
+390,PO-2026-0010,Maghreb Packaging,181710,medium,normal
+391,PO-2026-0011,Fes Technical Parts,22531,high,normal
+392,PO-2026-0012,North Logistics,39852,low,normal
+393,PO-2026-0013,Kenitra Maintenance,57173,low,urgent
+394,PO-2026-0014,Rabat Supplies,74494,low,high
+395,PO-2026-0015,Atlas Industrial,91815,medium,normal
+396,PO-2026-0016,Marrakech Office Solutions,109136,low,normal
+397,PO-2026-0017,Casa Equipment,246457,low,normal
+398,PO-2026-0018,Agadir Cold Chain,143778,low,normal
+399,PO-2026-0019,Sahara Components,161099,low,normal
+400,PO-2026-0020,Oujda Distribution,178420,medium,normal
